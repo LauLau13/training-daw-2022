@@ -2,15 +2,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DOM básico</title>
+
+/*A partir del fichero sample.html, utilizando las funciones DOM, 
+mostrar por pantalla la siguiente información:
+-Número de enlaces de la página
+-Dirección a la que enlaza el penúltimo enlace
+-Número de enlaces que enlazan a http://prueba
+-Número de enlaces del tercer párrafo
+-Crear un nodo "div", con un nodo "p" dentro y añadirlo al documento
+*/
+
 <script type="text/javascript">
 window.onload = function() {
 	// Numero de enlaces de la pagina
+	console.log(`Enlaces que hay en la página: ${document.querySelectorAll('a').length}`)
 
 	// Direccion del penultimo enlace
+	let items = document.getElementsByName('a')
+	console.log(`Penúltimo enlace: ${items[items.length -2].href}`)
 
 	// Numero de enlaces que apuntan a http://prueba
+	let contador = 0;
+	for (let i = 0; i < enlaces.length; i++) {
+		if(enlaces[i].href == "http://prueba" || enlaces[i].href == "http://prueba")
+		contador++;
+	}
+	console.log("Número de enlaces que apuntan a http://prueba:" + contador)
 
 	// Numero de enlaces del tercer párrafo
+	console.log(document.getElementsByTagName('p')[2].getElementsByTagName('a').length)
+
+	//Crear un nodo <div>, con un nodo <p> dentro y añadirlo al documento
+	let aDiv = document.createElement('div')
+	let aParragraph = document.createElement('p')
+
+	aDiv.classList = 'ejemplo'
+	aParragraph.innerText = 'Soy un texto'
+
+	aDiv.appendChild(aParragraph)
+	document.getElementsByTagName('p')[0].appendChild(aDiv)
 
 }
 </script>
