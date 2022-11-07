@@ -11,7 +11,7 @@
 <body>
     <form name="main_form">
         <p>
-            <input type="radio" value="si" name="pregunta" id="pregunta_si">SI</input>
+            <input type="radio" onchange="enableOptionsCombo()" value="si" name="pregunta" id="pregunta_si">SI</input>
             <input type="radio" value="no" name="pregunta" id="pregunta_no">NO</input>
             <input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc">NS/NC</input>
         </p>
@@ -27,16 +27,16 @@
 
         <p>
             <label for="name">Nombre: </label>
-            <input type="text" name="name"></input>
+            <input type="text" name="name" required></input> //8.3 campo obligatorio
             <label for="surname">Apellidos: </label>
-            <input type="text" name="surname"></input>
+            <input type="text" name="surname" required></input> //8.3 campo obligatorio
             <label for="description">Descripción: </label>
-            <textarea type="textarea" name="description"></textarea>
+            <textarea type="textarea" name="description" maxlength="80"></textarea>
         </p>
 
         <p>
-            <input type="checkbox" value="condiciones" name="condiciones" id="condiciones">He leído y acepto las condiciones</input>
-            <input type="checkbox" value="privacidad" name="privacidad" id="privacidad">He leído la política de privacidad</input>
+            <input type="checkbox" onchange="DoubleCheckSend()" value="condiciones" name="condiciones" id="condiciones">He leído y acepto las condiciones</input>
+            <input type="checkbox" onchange="DoubleCheckSend()" value="privacidad" name="privacidad" id="privacidad">He leído la política de privacidad</input>
         </p>
 
         <p>

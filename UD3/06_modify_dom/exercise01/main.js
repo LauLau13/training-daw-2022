@@ -13,17 +13,15 @@ window.onload = function(e) {
     console.log('documento cargado')
 
     //3.1.1
-    let h2 = document.getElementsByTagName('h2')[0].innerText = 'New H2 changed from JS';
+    document.getElementsByTagName('h2').innerText = 'New H2 changed from JS';
     
     //3.1.2
     let ID = document.getElementById("username");
+    console.log(ID);
 
     //3.1.3
-    let articleFirstTrue = document.getElementByTagName('article').contains(document.getElementsByClassName("first"));
-    if (articleFirstTrue == true) 
-    {
-        let first = document.getElementsByClassName("first").style.color = "blue";
-    }
+    
+    cambioColor(art);
 
     //3.1.4
     let liItemTrue = document.getElementByTagName('li').contains(document.getElementsByClassName("item"));
@@ -46,4 +44,14 @@ window.onload = function(e) {
     buttonsButtonTrue.style.forecolor = "green";
 
     // document.getElementsByTagName('h1')[0].innerText = 'Changed from JS!!'
+}
+
+//3.1.3 Cambiar el color de todos los .first que estén dentro de un artículo
+function cambioColor(a) 
+{
+    let articleFirstTrue = document.getElementByTagName('article').contains(document.getElementsByClassName("first"));
+    if (articleFirstTrue == true) 
+    {
+        let first = document.getElementsByClassName("first").style.color = "blue";
+    }
 }
