@@ -11,7 +11,7 @@ Diseñar una clase coche que:
 class Coche
 {
     //Método constructor
-    coche(marca, modelo, consumoPor100)
+    constructor (marca, modelo, consumoPor100)
     {
         this.marca = marca;
         this.modelo = modelo;
@@ -24,13 +24,12 @@ class Coche
         if (litros > 0)
         {
             this.tGasolina = this.tGasolina + litros;
-            console.log('Total gasolina' + this.tGasolina)
+            console.log('Total gasolina: ' + this.tGasolina)
         }
         else
         {
-            console.log('La cantidad de gasolina a introducir tiene que ser superior a 0.')
+            console.log('La cantidad de gasolina a introducir tiene que ser una cantidad real superior a 0.')
         }
-        
     }
 
 
@@ -39,6 +38,7 @@ class Coche
         if (distancia > 0 && (distancia < ((this.tGasolina * 100)/this.consumoPor100)))
         {
             this.tGasolina = this.tGasolina - ((distancia * this.consumoPor100)/100);
+            console.log('Se han recorrido ' + distancia + ' km')
         }
         else if (distancia > 0 && (distancia > ((this.tGasolina * 100)/this.consumoPor100)))
         {
@@ -60,3 +60,17 @@ class Coche
         console.log('Aún se pueden recorrer ' + kmRestante + ' km');
     }
 }
+
+
+//Comprobación:
+
+    let cocheA = new Coche("Audi","A8",2);
+    cocheA.reposta(100); //console.log = Total gasolina: 100
+    cocheA.reposta(0); //console.log = La cantidad de gasolina a introducir tiene que ser una cantidad real superior a 0
+    cocheA.reposta("a"); //console.log = La cantidad de gasolina a introducir tiene que ser una cantidad real superior a 0
+    cocheA.restante(); //console.log = Aún se pueden recorrer 5000 km
+    cocheA.move(1000); //console.log = Se han recorrido 1000 km
+    cocheA.restante(); //console.log = Aún se pueden recorrer 4000 km
+    cocheA.move(12000); //console.log = La distancia es superior a la que permite el depósito de gasolina; Se han recorrido 4000km hasta quedarse sin gasolina; El depósito de gasolina está vacío, no se puede avanzar más.
+    cocheA.restante(); //console.log = Aún se pueden recorrer 0 km
+    cocheA.move("b"); //console.log = Es imposible desplazarse una distancia b
