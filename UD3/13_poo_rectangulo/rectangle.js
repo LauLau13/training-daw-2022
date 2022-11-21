@@ -1,13 +1,47 @@
+/*
+Modificar la clase Rectangle:
+- 1.Añadir en el constructor los datos que faltan para que sea un rectángulo
+- 2.Añadir un método para calcular el área
+- 3.Añadir un método para saber si 2 rectángulos se superponen (overlay)
+
+*/
 class Rectangle {
 
     // add x1, y1
-    constructor(x, y) {
+    constructor(x, y, base, altura) {
         this.x = x;
         this.y = y;
+        this.base = base; //1. Dato que falta
+        this.altura = altura; //2.Dato que falta
     }
 
     print() {
-        console.log(`[${this.x}, ${this.y}]`)
+        console.log(`Punto origen :[${this.x}, ${this.y}]. Base: ${base}. Altura: ${altura}`)
+    }
+
+    //2.Calculo área
+    area(){
+        console.log(`Área rectángulo : ${(this.base )*(this.altura)}`);
+    }
+
+    //3.Superposición de rectángulos
+    interferencia (Rectangle){
+
+    }
+
+    puntoTopLeft() {
+        let PTopLeft = [this.x, (this.y + this.altura)];
+        return PTopLeft;
+    }
+
+    puntoBaseRight(){
+        let PBaseRight = [(this.x + base), this.y];
+        return PBaseRight;
+    }
+
+    puntoDiagonal(){
+        let PDiagonal = [(this.x + base), (this.y + altura)];
+        return PDiagonal;
     }
 
     // area

@@ -8,3 +8,5 @@ const test = {
   };
 
 test.func()
+
+//la función .bind() conserva el objeto this

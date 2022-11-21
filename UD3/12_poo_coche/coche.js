@@ -24,6 +24,7 @@ class Coche
         if (litros > 0)
         {
             this.tGasolina = this.tGasolina + litros;
+            //this.tGasolina += litros; //también se puede escribir así
             console.log('Total gasolina: ' + this.tGasolina)
         }
         else
