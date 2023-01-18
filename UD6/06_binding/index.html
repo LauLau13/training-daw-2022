@@ -12,7 +12,7 @@
 
     <div id="app">
       {{ message }}
-      <div title="{{message}}">Example of title</div>
+      <div v-bind:title="help">Example of title</div>
     </div>
   </main>
 
@@ -20,7 +20,8 @@
     let app = new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue!!'
+        message: 'Hello Vue',
+        help: 'This is a message of help'
       }
     })
   </script>

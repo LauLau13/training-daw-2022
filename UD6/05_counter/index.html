@@ -8,18 +8,22 @@
 </head>
 <body>
   <main>
-    Sample vuejs application
-
     <div id="app">
       {{ message }}
+      <div>
+        {{ counter }}
+        <button v-on:click="counter++">Incrementar</button>
+      </div>
     </div>
   </main>
 
   <script>
-    let app = new Vue({
+    let app = new Vue
+    ({
       el: '#app',
       data: {
-        message: 'Hello Vue!!'
+        message: 'Counter App',
+        counter: '0'
       }
     })
   </script>
