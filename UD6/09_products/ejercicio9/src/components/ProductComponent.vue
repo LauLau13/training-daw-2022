@@ -2,8 +2,8 @@
   <div>
     <div>
       <div>
-        <div>{{ name }} </div>
-        <div> {{ price }} </div>
+        <div>{{ name }}</div>
+        <div> {{ price }}</div>
       </div>
       <div>
         <button @click="show = !show">Show description</button>
@@ -23,7 +23,6 @@ export default {
       description:'Sneakers for wealthy people'
     }
   }
-  
 }
 </script>
 

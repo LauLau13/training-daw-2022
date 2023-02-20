@@ -33,9 +33,23 @@ export default {
     }
   },
   methods: {
+    onMark(id) {
+      console.log(`tarea marcada ${id}`);
+      let task = this.tasks.filter(t => t.id === id)[0]
+      task.done = !task.done
+    }
+    addTask() {
+      if(this.taskName.trim() !== ""){
+        this.tasks.push({
+          id: this.task.lenght,
+          name: this.taskName,
+          done: false
+        })
+      }
+    }
   }
 }
-</script>
+</script
 
 <style>
 #app {
